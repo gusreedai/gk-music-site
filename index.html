@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+  <html lang="en">
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GK Music — Soundtrack setup &amp; curation for restaurants and venues</title>
+<meta name="description" content="GK Music sets up Soundtrack and curates the music for restaurants and venues, so the sound matches the room. Pay-what-you-want pricing.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%23B14B2C'/%3E%3Ctext x='50' y='67' font-size='50' font-family='Georgia,serif' fill='%23FAF6F1' text-anchor='middle'%3EGK%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#FAF6F1;
+      --bg-alt:#F1E7D8;
+      --ink:#211C18;
+    --ink-soft:#5B5349;
+    --accent:#B14B2C;
+          --accent-soft:#D9C6AE;
+          --line:#E4D8C4;
+          --radius:6px;
+    --maxw:920px;
+}
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+        margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
+    font-size:17px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+}
+  h1,h2,h3{
+        font-family:'Fraunces',Georgia,serif;
+    font-weight:600;
+    line-height:1.15;
+    margin:0 0 .5em;
+    color:var(--ink);
+}
+  p{margin:0 0 1em;}
+  a{color:var(--accent);}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px;}
+  section{padding:96px 0;}
+  section.alt{background:var(--bg-alt);}
+  @media (max-width:640px){
+    body{font-size:16px;}
+    section{padding:64px 0;}
+}
+
+  /* Header */
+  header{
+        position:sticky;top:0;z-index:10;
+    background:rgba(250,246,241,.92);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--line);
+}
+  header .wrap{
+    display:flex;align-items:center;justify-content:space-between;
+    padding-top:18px;padding-bottom:18px;
+  }
+  .wordmark{
+        font-family:'Fraunces',Georgia,serif;
+    font-weight:600;font-size:20px;letter-spacing:.02em;
+    color:var(--ink);text-decoration:none;
+}
+  .nav-cta{
+        font-family:'Inter',sans-serif;font-weight:600;font-size:14px;
+    color:var(--ink);text-decoration:none;
+    border:1px solid var(--ink);border-radius:var(--radius);
+    padding:9px 16px;transition:background .15s,color .15s;
+}
+  .nav-cta:hover{background:var(--ink);color:var(--bg);}
+
+  /* Hero */
+  .hero{padding-top:88px;position:relative;overflow:hidden;}
+  .kicker{
+        font-family:'Inter',sans-serif;font-weight:600;font-size:13px;
+    letter-spacing:.08em;text-transform:uppercase;color:var(--accent);
+    margin-bottom:18px;display:block;
+}
+  .hero h1{font-size:clamp(34px,5.4vw,58px);max-width:15ch;}
+  .hero .sub{
+    font-size:19px;color:var(--ink-soft);max-width:46ch;margin-top:18px;
+  }
+  .hero-cta{
+        display:inline-block;margin-top:36px;
+    background:var(--accent);color:var(--bg);
+    font-weight:600;font-size:15px;text-decoration:none;
+    padding:14px 26px;border-radius:var(--radius);
+    transition:opacity .15s;
+}
+  .hero-cta:hover{opacity:.88;}
+  .waveform{
+        display:flex;gap:5px;align-items:flex-end;height:52px;
+    margin-top:64px;opacity:.35;
+  }
+  .waveform span{width:5px;background:var(--accent);border-radius:2px;}
+
+  /* Generic section heading */
+  .eyebrow{
+        font-family:'Inter',sans-serif;font-weight:600;font-size:13px;
+    letter-spacing:.08em;text-transform:uppercase;color:var(--accent);
+    display:block;margin-bottom:14px;
+}
+  h2{font-size:clamp(26px,3.4vw,36px);max-width:20ch;}
+  .lede{font-size:18px;max-width:58ch;}
+  .lede strong{color:var(--ink);font-weight:600;}
+
+  /* Two-column services */
+  .cols{display:grid;grid-template-columns:1fr 1fr;gap:48px;margin-top:44px;}
+  @media (max-width:640px){.cols{grid-template-columns:1fr;gap:32px;}}
+  .col h3{font-size:20px;margin-bottom:.4em;}
+  .col p{color:var(--ink-soft);font-size:16px;}
+  .col{border-top:2px solid var(--accent);padding-top:18px;}
+
+  /* Qualify list */
+  .qualify ul{list-style:none;margin:36px 0 0;padding:0;}
+  .qualify li{
+        padding:20px 0;border-top:1px solid var(--line);
+    font-size:18px;color:var(--ink-soft);max-width:60ch;
+  }
+  .qualify li:last-child{border-bottom:1px solid var(--line);}
+
+  /* Pricing */
+  .price-rows{margin:36px 0;max-width:520px;}
+  .price-row{
+        display:flex;justify-content:space-between;gap:16px;
+    padding:18px 0;border-top:1px solid var(--line);
+    font-size:17px;
+}
+  .price-row:last-child{border-bottom:1px solid var(--line);}
+  .price-row .amount{font-family:'Fraunces',Georgia,serif;font-weight:600;color:var(--accent);white-space:nowrap;}
+  .pwyw-tag{
+        display:inline-block;font-size:12px;font-weight:600;letter-spacing:.06em;
+    text-transform:uppercase;color:var(--ink-soft);
+    border:1px solid var(--line);border-radius:20px;padding:5px 12px;
+    margin-bottom:20px;
+}
+  .rights-note{
+        margin-top:40px;padding:20px 22px;background:var(--bg);
+    border:1px solid var(--line);border-radius:var(--radius);
+    font-size:14px;color:var(--ink-soft);max-width:640px;
+}
+  .rights-note strong{color:var(--ink);}
+
+  /* Contact */
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:44px;margin-top:8px;}
+  @media (max-width:640px){.contact-grid{grid-template-columns:1fr;}}
+  form{margin-top:36px;}
+      label{
+        display:block;font-size:13px;font-weight:600;letter-spacing:.03em;
+    color:var(--ink-soft);margin-bottom:6px;text-transform:uppercase;
+  }
+  .field{margin-bottom:22px;}
+      input[type=text],input[type=email],textarea{
+        width:100%;font-family:'Inter',sans-serif;font-size:16px;color:var(--ink);
+    background:var(--bg);border:1px solid var(--line);border-radius:var(--radius);
+    padding:12px 14px;transition:border-color .15s;
+}
+  input:focus,textarea:focus{outline:none;border-color:var(--accent);}
+  textarea{min-height:120px;resize:vertical;}
+  .honey{position:absolute;left:-9999px;}
+  button[type=submit]{
+    background:var(--ink);color:var(--bg);border:none;
+    font-family:'Inter',sans-serif;font-weight:600;font-size:15px;
+    padding:14px 28px;border-radius:var(--radius);cursor:pointer;
+    transition:opacity .15s;
+}
+  button[type=submit]:hover{opacity:.85;}
+  button[type=submit]:disabled{opacity:.6;cursor:default;}
+  #formStatus{margin-top:16px;font-size:15px;min-height:1.4em;}
+  #formStatus.success{color:#3F6C4C;}
+  #formStatus.error{color:var(--accent);}
+
+  footer{border-top:1px solid var(--line);padding:40px 0;}
+  footer .wrap{
+    display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;align-items:center;
+    font-size:14px;color:var(--ink-soft);
+  }
+  footer a{color:var(--ink-soft);}
+</style>
+
+  </head>
+  <body>
+
+  <header>
+    <div class="wrap">
+      <a class="wordmark" href="#top">GK Music</a>
+      <a class="nav-cta" href="#contact">Tell us about your space</a>
+  </div>
+</header>
+
+<main>
+
+  <section class="hero" id="top">
+    <div class="wrap">
+      <span class="kicker">Soundtrack setup + curation, for restaurants and venues</span>
+      <h1>Make your venue sound as intentional as it looks.</h1>
+        <p class="sub">We help venues set up Soundtrack and curate the music so their space sounds as intentional as it looks.</p>
+      <a class="hero-cta" href="#contact">Tell us about your space</a>
+      <div class="waveform" aria-hidden="true">
+        <span style="height:35%"></span><span style="height:60%"></span><span style="height:42%"></span>
+          <span style="height:80%"></span><span style="height:28%"></span><span style="height:55%"></span>
+          <span style="height:70%"></span><span style="height:38%"></span><span style="height:90%"></span>
+          <span style="height:48%"></span><span style="height:62%"></span><span style="height:30%"></span>
+          <span style="height:75%"></span><span style="height:44%"></span><span style="height:58%"></span>
+          <span style="height:33%"></span><span style="height:85%"></span><span style="height:50%"></span>
+          <span style="height:40%"></span><span style="height:65%"></span><span style="height:25%"></span>
+          <span style="height:72%"></span><span style="height:46%"></span><span style="height:36%"></span>
+        </div>
+      </div>
+    </section>
+
+    <section class="explainer alt">
+      <div class="wrap">
+        <span class="eyebrow">New to Soundtrack?</span>
+      <h2>It's not Spotify with a business logo.</h2>
+        <p class="lede">Soundtrack is a streaming service built specifically for businesses. It's fully licensed for public play — which a personal Spotify or Apple Music account is not, even though plenty of venues run on one anyway. Underneath, there's a catalog of well over 100 million songs, scheduling by time of day, and one dashboard to control every location, if you have more than one.</p>
+      <p class="lede"><strong>What it doesn't do on its own is know your room. That's the part we handle.</strong></p>
+      </div>
+    </section>
+
+    <section class="services">
+      <div class="wrap">
+        <span class="eyebrow">What we do</span>
+        <h2>Setup. Then the part that actually matters.</h2>
+        <div class="cols">
+          <div class="col">
+            <h3>Setup</h3>
+            <p>We get the account running — zones, hardware, scheduling — wired correctly the first time, so you're not the one on hold with support.</p>
+          </div>
+          <div class="col">
+            <h3>Curation</h3>
+            <p>Then we build the playlists by hand, for your room, your hours, your crowd. Not a genre preset. Something considered.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="qualify alt">
+      <div class="wrap">
+        <span class="eyebrow">Sound familiar?</span>
+        <h2>Most venues end up here by accident.</h2>
+        <ul>
+          <li>The music's on shuffle, or off, or whatever the last shift left playing.</li>
+          <li>You've got Soundtrack, or you're about to, and no time to touch it.</li>
+          <li>The room looks considered. The music doesn't sound like anyone thought about it.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="pricing">
+      <div class="wrap">
+        <span class="eyebrow">What it costs</span>
+      <h2>Pay what you want, while we build this out.</h2>
+      <p class="pwyw-tag">Pay-what-you-want</p>
+      <div class="price-rows">
+        <div class="price-row"><span>Soundtrack setup</span><span class="amount">$20–50</span></div>
+        <div class="price-row"><span>Three custom playlists, fully curated</span><span class="amount">$300–600</span></div>
+      </div>
+      <p class="lede">Tell us about your space below and we'll land on a number that's fair for both of us.</p>
+        <div class="rights-note">
+          <strong>A note on rights:</strong> GK Music sets up and curates your Soundtrack account. We don't sell or resell music licenses, and nothing here is legal advice — your Soundtrack subscription is what covers you for commercial use. We just make sure it sounds like it belongs.
+        </div>
+      </div>
+    </section>
+
+    <section class="contact alt" id="contact">
+      <div class="wrap">
+        <span class="eyebrow">Get in touch</span>
+      <h2>Tell us about your space.</h2>
+        <p class="lede">A few details and we'll get back to you.</p>
+
+        <form id="contactForm" action="https://formsubmit.co/ajax/gusreed02@gmail.com" method="POST">
+          <input type="hidden" name="_subject" value="New inquiry — GK Music site">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_captcha" value="false">
+          <input class="honey" type="text" name="_honey" tabindex="-1" autocomplete="off">
+
+          <div class="contact-grid">
+            <div>
+              <div class="field">
+                <label for="f-name">Name</label>
+                <input type="text" id="f-name" name="Name" required>
+              </div>
+              <div class="field">
+                <label for="f-email">Email</label>
+                <input type="email" id="f-email" name="Email" required>
+              </div>
+              <div class="field">
+                <label for="f-venue">Venue name</label>
+                <input type="text" id="f-venue" name="Venue" required>
+              </div>
+              <div class="field">
+                <label for="f-location">City / State</label>
+                <input type="text" id="f-location" name="Location">
+              </div>
+            </div>
+            <div>
+              <div class="field">
+                <label for="f-message">About your space</label>
+              <textarea id="f-message" name="Message" required placeholder="What's the space like? What's not working about the sound right now?"></textarea>
+              </div>
+            </div>
+          </div>
+
+          <button type="submit">Send it over</button>
+      </form>
+      <p id="formStatus" role="status"></p>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>GK Music</span>
+      <span><a href="mailto:gusreed02@gmail.com">gusreed02@gmail.com</a></span>
+      <span>© 2026 GK Music</span>
+    </div>
+  </footer>
+
+  <script>
+    const form = document.getElementById('contactForm');
+  const status = document.getElementById('formStatus');
+  form.addEventListener('submit', async function (e) {
+        e.preventDefault();
+    const btn = form.querySelector('button[type=submit]');
+    const originalLabel = btn.textContent;
+    btn.disabled = true;
+    btn.textContent = 'Sending…';
+    status.textContent = '';
+    status.className = '';
+    try {
+      const res = await fetch(form.action, {
+        method: 'POST',
+                headers: { 'Accept': 'application/json' },
+                body: new FormData(form)
+                  });
+      if (!res.ok) throw new Error('Request failed: ' + res.status);
+      form.reset();
+      form.hidden = true;
+      status.textContent = "Got it — thank you. We'll be in touch soon.";
+      status.className = 'success';
+    } catch (err) {
+      status.textContent = "That didn't go through — email us directly at gusreed02@gmail.com instead.";
+      status.className = 'error';
+      btn.disabled = false;
+      btn.textContent = originalLabel;
+    }
+});
+</script>
+
+  </body>
+  </html>
+  
