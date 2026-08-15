@@ -9,7 +9,7 @@
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%230d0d0f'/%3E%3Ccircle cx='74' cy='25' r='10' fill='%23b7f34a'/%3E%3Ctext x='16' y='70' font-size='46' font-weight='700' font-family='Arial,sans-serif' fill='white'%3EGK%3C/text%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,500;1,600&amp;display=swap" rel="stylesheet">
   <style>
     :root{
       --bg:#0d0d0f;
@@ -30,7 +30,7 @@
       --radius-lg:22px;
       --max:1200px;
       --font:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text",Inter,"Segoe UI",sans-serif;
-      --script:"Caveat","Segoe Print",cursive;
+      --accent-serif:"Cormorant Garamond",Georgia,"Times New Roman",serif;
     }
 
     *{box-sizing:border-box}
@@ -87,7 +87,7 @@
     section{padding:112px 0}
     .eyebrow{display:inline-flex;align-items:center;gap:9px;margin-bottom:22px;color:var(--accent);font-size:.74rem;font-weight:760;letter-spacing:.13em;text-transform:uppercase}
     .eyebrow::before{content:"";width:22px;height:2px;background:currentColor}
-    .script-note{font-family:var(--script);color:var(--accent);font-size:clamp(1.55rem,2.4vw,2.15rem);line-height:1;margin-bottom:18px}
+    .accent-note{font-family:var(--accent-serif);color:var(--accent);font-size:clamp(1.45rem,2.2vw,2rem);font-style:italic;font-weight:500;letter-spacing:-.015em;line-height:1.08;margin-bottom:18px}
     .section-intro{font-size:clamp(1rem,1.6vw,1.2rem);max-width:60ch;color:var(--muted-strong)}
 
     .hero{padding:78px 0 104px;min-height:calc(100svh - 72px);display:flex;align-items:center;border-bottom:1px solid var(--line);overflow:hidden}
@@ -99,8 +99,8 @@
     .quiet-proof li{display:flex;align-items:center;gap:9px}
     .quiet-proof li::before{content:"";width:6px;height:6px;background:var(--accent);border-radius:50%}
     .hero-art{position:relative;width:min(100%,470px);justify-self:end}
-    .hero-cover{display:block;position:relative;border-radius:var(--radius-lg);overflow:hidden;background:var(--surface);box-shadow:0 34px 90px rgba(0,0,0,.44);text-decoration:none}
-    .hero-cover img{width:100%;aspect-ratio:4/5;object-fit:cover;transition:transform .35s ease}
+    .hero-cover{display:block;position:relative;aspect-ratio:4/5;border-radius:var(--radius-lg);overflow:hidden;background:var(--surface);box-shadow:0 34px 90px rgba(0,0,0,.44);text-decoration:none}
+    .hero-cover img{width:100%;height:100%;object-fit:contain;transition:transform .35s ease}
     .hero-cover:hover img{transform:scale(1.018)}
     .hero-cover-meta{position:absolute;inset:auto 12px 12px;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 16px;border:1px solid rgba(255,255,255,.13);border-radius:12px;background:rgba(13,13,15,.82);backdrop-filter:blur(12px)}
     .hero-cover-meta span{display:block}
@@ -108,7 +108,7 @@
     .hero-cover-meta .title{margin-top:2px;font-weight:750;letter-spacing:-.02em}
     .play-mark{width:48px;height:48px;display:grid;place-items:center;flex:0 0 auto;border-radius:50%;background:var(--accent);color:var(--accent-ink)}
     .play-mark svg{width:20px;height:20px;margin-left:2px}
-    .art-note{position:absolute;right:-20px;top:-24px;transform:rotate(5deg);padding:7px 15px;background:var(--accent);color:var(--accent-ink);border-radius:7px;font-family:var(--script);font-size:1.25rem;font-weight:600;box-shadow:0 12px 24px rgba(0,0,0,.25)}
+    .art-note{position:absolute;right:-20px;top:-24px;z-index:2;transform:rotate(3deg);padding:8px 16px;background:var(--accent);color:var(--accent-ink);border-radius:7px;font-family:var(--accent-serif);font-size:1.2rem;font-style:italic;font-weight:600;letter-spacing:-.01em;box-shadow:0 12px 24px rgba(0,0,0,.25);pointer-events:none}
 
     .value-section{background:var(--surface-soft)}
     .value-grid{display:grid;grid-template-columns:1.08fr 1fr;gap:clamp(48px,8vw,104px);align-items:start}
@@ -122,12 +122,13 @@
     .catalog-head h2{max-width:11ch;margin-bottom:0}
     .catalog-instructions{max-width:420px;margin:0;padding:18px 20px;border-left:2px solid var(--accent);color:var(--muted-strong);font-size:.92rem}
     .playlist-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:28px 18px}
-    .playlist-card{display:block;min-width:0;padding:12px 12px 15px;border-radius:var(--radius);background:var(--surface);text-decoration:none;transition:background .2s ease,transform .2s ease,box-shadow .2s ease}
-    .playlist-card:hover{background:var(--surface-raised);transform:translateY(-4px);box-shadow:0 18px 42px rgba(0,0,0,.26)}
-    .playlist-image{position:relative;border-radius:8px;overflow:hidden;background:#252529}
-    .playlist-image img{width:100%;aspect-ratio:4/5;object-fit:cover}
+    .playlist-card{display:block;min-width:0;border-radius:var(--radius);background:transparent;text-decoration:none;transition:transform .2s ease}
+    .playlist-card:hover{transform:translateY(-4px)}
+    .playlist-image{position:relative;aspect-ratio:4/5;border-radius:10px;overflow:hidden;background:#252529;box-shadow:0 14px 34px rgba(0,0,0,.22);transition:box-shadow .2s ease}
+    .playlist-card:hover .playlist-image{box-shadow:0 20px 48px rgba(0,0,0,.38)}
+    .playlist-image img{display:block;width:100%;height:100%;object-fit:contain}
     .playlist-image::after{content:"";position:absolute;inset:0;border:1px solid rgba(255,255,255,.09);border-radius:inherit;pointer-events:none}
-    .playlist-card-body{padding:15px 3px 0}
+    .playlist-card-body{padding:15px 4px 0}
     .playlist-card h3{font-size:1rem;letter-spacing:-.018em;white-space:normal;overflow-wrap:anywhere;margin-bottom:5px}
     .playlist-card p{font-size:.875rem;line-height:1.4;margin-bottom:13px;min-height:2.4em}
     .card-link{display:inline-flex;align-items:center;gap:6px;color:var(--accent);font-size:.76rem;font-weight:740}
@@ -207,7 +208,6 @@
       h1{font-size:clamp(3rem,15vw,4.45rem)}
       h2{font-size:clamp(2.15rem,11vw,3.15rem)}
       .playlist-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px 10px}
-      .playlist-card{padding:8px 8px 12px}
       .playlist-card-body{padding-top:12px}
       .playlist-card h3{font-size:.9rem}
       .playlist-card p{font-size:.875rem;min-height:2.65em}
@@ -253,7 +253,7 @@
       <div class="wrap hero-grid">
         <div class="hero-copy">
           <span class="eyebrow">Music direction for rooms where people stay</span>
-          <p class="script-note">curated by hand, tuned to the room</p>
+          <p class="accent-note">curated by hand, tuned to the room</p>
           <h1>Your room already has a look. Give it a sound.</h1>
           <p class="sub">GK Music builds three human-curated programs around your actual hours, sets them up in Soundtrack, and tunes them after your staff has lived with them.</p>
           <div class="hero-actions">
@@ -302,7 +302,7 @@
       <div class="wrap">
         <div class="catalog-head">
           <div><span class="eyebrow">The sample catalog</span><h2 id="samples-title">Hear the taste before you buy it.</h2></div>
-          <p class="catalog-instructions"><strong>On desktop:</strong> scan a code with Spotify. <strong>On your phone:</strong> tap any cover to open its short public sample.</p>
+          <p class="catalog-instructions"><strong>Click or tap any cover</strong> to open its short public sample in Spotify. Prefer scanning? Each cover includes a Spotify Code.</p>
         </div>
 
         <div class="playlist-grid">
@@ -410,7 +410,7 @@
       <div class="wrap contact-grid">
         <div class="contact-copy">
           <span class="eyebrow">Get in touch</span>
-          <p class="script-note">tell us what the room feels like</p>
+          <p class="accent-note">tell us what the room feels like</p>
           <h2 id="contact-title">Let’s give it a sound.</h2>
           <p class="section-intro">A few details is enough. We’ll get back to you with the next step—not a hard sell.</p>
           <p class="direct">Prefer email? <a href="mailto:gusreed02@gmail.com">gusreed02@gmail.com</a></p>
