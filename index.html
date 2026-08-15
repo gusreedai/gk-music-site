@@ -98,16 +98,16 @@
     .quiet-proof{display:flex;flex-wrap:wrap;gap:12px 24px;margin:40px 0 0;padding:24px 0 0;border-top:1px solid var(--line);list-style:none;color:var(--muted);font-size:.85rem;font-weight:620}
     .quiet-proof li{display:flex;align-items:center;gap:9px}
     .quiet-proof li::before{content:"";width:6px;height:6px;background:var(--accent);border-radius:50%}
-    .hero-art{position:relative;width:min(100%,470px);justify-self:end}
+    .hero-art{position:relative;width:min(100%,470px);justify-self:end;transform:translateY(-72px)}
     .hero-cover{display:block;position:relative;aspect-ratio:4/5;border-radius:var(--radius-lg);overflow:hidden;background:var(--surface);box-shadow:0 34px 90px rgba(0,0,0,.44);text-decoration:none}
     .hero-cover img{width:100%;height:100%;object-fit:contain;transition:transform .35s ease}
     .hero-cover:hover img{transform:scale(1.018)}
     .hero-cover-meta{position:absolute;inset:auto 12px 12px;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 16px;border:1px solid rgba(255,255,255,.13);border-radius:12px;background:rgba(13,13,15,.82);backdrop-filter:blur(12px)}
-    .hero-cover-meta span{display:block}
+    .hero-cover-meta .meta-copy span{display:block}
     .hero-cover-meta .label{color:var(--muted);font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
     .hero-cover-meta .title{margin-top:2px;font-weight:750;letter-spacing:-.02em}
-    .play-mark{width:48px;height:48px;display:grid;place-items:center;flex:0 0 auto;border-radius:50%;background:var(--accent);color:var(--accent-ink)}
-    .play-mark svg{width:20px;height:20px;margin-left:2px}
+    .hero-cover-action{display:inline-flex;align-items:center;gap:6px;flex:0 0 auto;color:var(--accent);font-size:.78rem;font-weight:760;white-space:nowrap}
+    .hero-cover-action svg{width:16px;height:16px}
     .art-note{position:absolute;right:-20px;top:-24px;z-index:2;transform:rotate(3deg);padding:8px 16px;background:var(--accent);color:var(--accent-ink);border-radius:7px;font-family:var(--accent-serif);font-size:1.2rem;font-style:italic;font-weight:600;letter-spacing:-.01em;box-shadow:0 12px 24px rgba(0,0,0,.25);pointer-events:none}
 
     .value-section{background:var(--surface-soft)}
@@ -188,7 +188,7 @@
       .hero{min-height:auto;padding:72px 0 88px}
       .hero-grid,.value-grid,.price-grid,.contact-grid{grid-template-columns:1fr}
       .hero-copy{padding-block:0}
-      .hero-art{justify-self:start;width:min(100%,560px)}
+      .hero-art{justify-self:start;width:min(100%,560px);transform:none}
       .art-note{right:14px}
       .playlist-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
       .catalog-head{align-items:start;flex-direction:column}
@@ -275,8 +275,8 @@
           <a class="hero-cover" href="https://open.spotify.com/playlist/1fXHlWrXU7Li5i9iPehNgN" target="_blank" rel="noopener noreferrer" aria-label="Open the SOULFOOD public sample on Spotify (opens in a new tab)">
             <img src="img/catalog/soulfood.jpg" width="600" height="750" alt="SOULFOOD cover artwork with a scannable Spotify code" fetchpriority="high">
             <span class="hero-cover-meta">
-              <span><span class="label">Featured public sample</span><span class="title">SOULFOOD</span></span>
-              <span class="play-mark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8.5 5.8v12.4L18 12 8.5 5.8Z" fill="currentColor"/></svg></span>
+              <span class="meta-copy"><span class="label">Featured public sample</span><span class="title">SOULFOOD</span></span>
+              <span class="hero-cover-action">Open sample <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
             </span>
           </a>
         </div>
