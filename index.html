@@ -1,359 +1,485 @@
-<!DOCTYPE html>
-<!-- redeploy trigger -->
-  <html lang="en">
-  <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GK Music — Soundtrack setup &amp; curation for restaurants and venues</title>
-<meta name="description" content="GK Music sets up Soundtrack and curates the music for restaurants and venues, so the sound matches the room. Pay-what-you-want pricing.">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%23B14B2C'/%3E%3Ctext x='50' y='67' font-size='50' font-family='Georgia,serif' fill='%23FAF6F1' text-anchor='middle'%3EGK%3C/text%3E%3C/svg%3E">
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GK Music — music direction for rooms where people stay</title>
+  <meta name="description" content="Human-curated music programs for independent venues, built for the room and set up in Soundtrack. Hear the public samples before you decide.">
+  <meta name="theme-color" content="#0d0d0f">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%230d0d0f'/%3E%3Ccircle cx='74' cy='25' r='10' fill='%23b7f34a'/%3E%3Ctext x='16' y='70' font-size='46' font-weight='700' font-family='Arial,sans-serif' fill='white'%3EGK%3C/text%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600&amp;display=swap" rel="stylesheet">
   <style>
     :root{
-      --bg:#FAF6F1;
-      --bg-alt:#F1E7D8;
-      --ink:#211C18;
-    --ink-soft:#5B5349;
-    --accent:#B14B2C;
-          --accent-soft:#D9C6AE;
-          --line:#E4D8C4;
-          --radius:6px;
-    --maxw:920px;
-}
-  *{box-sizing:border-box;}
-  html{scroll-behavior:smooth;}
-  body{
-        margin:0;
-    background:var(--bg);
-    color:var(--ink);
-    font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
-    font-size:17px;
-    line-height:1.6;
-    -webkit-font-smoothing:antialiased;
-}
-  h1,h2,h3{
-        font-family:'Fraunces',Georgia,serif;
-    font-weight:600;
-    line-height:1.15;
-    margin:0 0 .5em;
-    color:var(--ink);
-}
-  p{margin:0 0 1em;}
-  a{color:var(--accent);}
-  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px;}
-  section{padding:96px 0;}
-  section.alt{background:var(--bg-alt);}
-  @media (max-width:640px){
-    body{font-size:16px;}
-    section{padding:64px 0;}
-}
+      --bg:#0d0d0f;
+      --surface:#171719;
+      --surface-raised:#222226;
+      --surface-soft:#121214;
+      --text:#f7f7f5;
+      --muted:#a7a7ad;
+      --muted-strong:#c7c7cb;
+      --line:#303035;
+      --accent:#b7f34a;
+      --accent-hover:#cbff6b;
+      --accent-ink:#111609;
+      --danger:#ff7b7b;
+      --success:#b7f34a;
+      --radius-sm:8px;
+      --radius:14px;
+      --radius-lg:22px;
+      --max:1200px;
+      --font:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text",Inter,"Segoe UI",sans-serif;
+      --script:"Caveat","Segoe Print",cursive;
+    }
 
-  /* Header */
-  header{
-        position:sticky;top:0;z-index:10;
-    background:rgba(250,246,241,.92);
-    backdrop-filter:blur(6px);
-    border-bottom:1px solid var(--line);
-}
-  header .wrap{
-    display:flex;align-items:center;justify-content:space-between;
-    padding-top:18px;padding-bottom:18px;
-  }
-  .wordmark{
-        font-family:'Fraunces',Georgia,serif;
-    font-weight:600;font-size:20px;letter-spacing:.02em;
-    color:var(--ink);text-decoration:none;
-}
-  .nav-cta{
-        font-family:'Inter',sans-serif;font-weight:600;font-size:14px;
-    color:var(--ink);text-decoration:none;
-    border:1px solid var(--ink);border-radius:var(--radius);
-    padding:9px 16px;transition:background .15s,color .15s;
-}
-  .nav-cta:hover{background:var(--ink);color:var(--bg);}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth;scroll-padding-top:88px;background:var(--bg)}
+    body{
+      margin:0;
+      background:var(--bg);
+      color:var(--text);
+      font-family:var(--font);
+      font-size:17px;
+      line-height:1.55;
+      -webkit-font-smoothing:antialiased;
+      text-rendering:optimizeLegibility;
+    }
+    body::selection{background:var(--accent);color:var(--accent-ink)}
+    img{display:block;max-width:100%}
+    button,input,textarea{font:inherit}
+    a{color:inherit}
+    h1,h2,h3,p{margin-top:0}
+    h1,h2,h3{letter-spacing:-.035em;line-height:1.03}
+    h1{font-size:clamp(3.25rem,7.8vw,7.4rem);max-width:9.5ch;margin-bottom:24px}
+    h2{font-size:clamp(2.25rem,4.8vw,4.75rem);max-width:12ch;margin-bottom:20px}
+    h3{font-size:1.22rem;margin-bottom:10px}
+    p{color:var(--muted);margin-bottom:1em}
+    .wrap{width:min(calc(100% - 40px),var(--max));margin-inline:auto}
+    .skip-link{position:fixed;left:16px;top:12px;z-index:1000;transform:translateY(-180%);background:var(--accent);color:var(--accent-ink);padding:10px 16px;border-radius:8px;font-weight:700;text-decoration:none}
+    .skip-link:focus{transform:translateY(0)}
+    :focus-visible{outline:3px solid var(--accent);outline-offset:4px}
 
-  /* Hero */
-  .hero{padding-top:88px;position:relative;overflow:hidden;}
-  .kicker{
-        font-family:'Inter',sans-serif;font-weight:600;font-size:13px;
-    letter-spacing:.08em;text-transform:uppercase;color:var(--accent);
-    margin-bottom:18px;display:block;
-}
-  .hero h1{font-size:clamp(34px,5.4vw,58px);max-width:15ch;}
-  .hero .sub{
-    font-size:19px;color:var(--ink-soft);max-width:46ch;margin-top:18px;
-  }
-  .hero-cta{
-        display:inline-block;margin-top:36px;
-    background:var(--accent);color:var(--bg);
-    font-weight:600;font-size:15px;text-decoration:none;
-    padding:14px 26px;border-radius:var(--radius);
-    transition:opacity .15s;
-}
-  .hero-cta:hover{opacity:.88;}
-  .waveform{
-        display:flex;gap:5px;align-items:flex-end;height:52px;
-    margin-top:64px;opacity:.35;
-  }
-  .waveform span{width:5px;background:var(--accent);border-radius:2px;}
+    .site-header{
+      position:sticky;
+      inset:0 0 auto;
+      z-index:50;
+      background:rgba(13,13,15,.88);
+      border-bottom:1px solid rgba(255,255,255,.08);
+      backdrop-filter:blur(18px);
+    }
+    .header-inner{min-height:72px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .brand{display:inline-flex;align-items:center;gap:9px;text-decoration:none;font-size:1.05rem;font-weight:760;letter-spacing:-.02em}
+    .brand-dot{width:9px;height:9px;border-radius:999px;background:var(--accent);box-shadow:0 0 18px rgba(183,243,74,.55)}
+    .primary-nav{display:flex;align-items:center;gap:28px}
+    .nav-link{color:var(--muted-strong);font-size:.9rem;font-weight:600;text-decoration:none;transition:color .18s ease}
+    .nav-link:hover{color:var(--text)}
+    .button{min-height:48px;display:inline-flex;align-items:center;justify-content:center;gap:9px;border:1px solid transparent;border-radius:999px;padding:0 22px;font-weight:740;font-size:.94rem;text-decoration:none;transition:background .18s ease,color .18s ease,border-color .18s ease,transform .18s ease}
+    .button:hover{transform:translateY(-1px)}
+    .button-primary{background:var(--accent);color:var(--accent-ink)}
+    .button-primary:hover{background:var(--accent-hover)}
+    .button-secondary{background:transparent;border-color:var(--line);color:var(--text)}
+    .button-secondary:hover{background:var(--surface-raised);border-color:#4b4b52}
+    .button svg,.card-link svg{width:18px;height:18px;flex:0 0 auto}
+    .header-cta{min-height:42px;padding-inline:18px;font-size:.86rem}
+    .mobile-nav{display:none}
 
-  /* Generic section heading */
-  .eyebrow{
-        font-family:'Inter',sans-serif;font-weight:600;font-size:13px;
-    letter-spacing:.08em;text-transform:uppercase;color:var(--accent);
-    display:block;margin-bottom:14px;
-}
-  h2{font-size:clamp(26px,3.4vw,36px);max-width:20ch;}
-  .lede{font-size:18px;max-width:58ch;}
-  .lede strong{color:var(--ink);font-weight:600;}
+    section{padding:112px 0}
+    .eyebrow{display:inline-flex;align-items:center;gap:9px;margin-bottom:22px;color:var(--accent);font-size:.74rem;font-weight:760;letter-spacing:.13em;text-transform:uppercase}
+    .eyebrow::before{content:"";width:22px;height:2px;background:currentColor}
+    .script-note{font-family:var(--script);color:var(--accent);font-size:clamp(1.55rem,2.4vw,2.15rem);line-height:1;margin-bottom:18px}
+    .section-intro{font-size:clamp(1rem,1.6vw,1.2rem);max-width:60ch;color:var(--muted-strong)}
 
-  /* Two-column services */
-  .cols{display:grid;grid-template-columns:1fr 1fr;gap:48px;margin-top:44px;}
-  @media (max-width:640px){.cols{grid-template-columns:1fr;gap:32px;}}
-  .col h3{font-size:20px;margin-bottom:.4em;}
-  .col p{color:var(--ink-soft);font-size:16px;}
-  .col{border-top:2px solid var(--accent);padding-top:18px;}
+    .hero{padding:78px 0 104px;min-height:calc(100svh - 72px);display:flex;align-items:center;border-bottom:1px solid var(--line);overflow:hidden}
+    .hero-grid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(340px,.72fr);gap:clamp(48px,8vw,112px);align-items:center}
+    .hero-copy{padding-block:24px}
+    .hero-copy .sub{max-width:58ch;color:var(--muted-strong);font-size:clamp(1.05rem,1.8vw,1.3rem)}
+    .hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
+    .quiet-proof{display:flex;flex-wrap:wrap;gap:12px 24px;margin:40px 0 0;padding:24px 0 0;border-top:1px solid var(--line);list-style:none;color:var(--muted);font-size:.85rem;font-weight:620}
+    .quiet-proof li{display:flex;align-items:center;gap:9px}
+    .quiet-proof li::before{content:"";width:6px;height:6px;background:var(--accent);border-radius:50%}
+    .hero-art{position:relative;width:min(100%,470px);justify-self:end}
+    .hero-cover{display:block;position:relative;border-radius:var(--radius-lg);overflow:hidden;background:var(--surface);box-shadow:0 34px 90px rgba(0,0,0,.44);text-decoration:none}
+    .hero-cover img{width:100%;aspect-ratio:4/5;object-fit:cover;transition:transform .35s ease}
+    .hero-cover:hover img{transform:scale(1.018)}
+    .hero-cover-meta{position:absolute;inset:auto 12px 12px;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 16px;border:1px solid rgba(255,255,255,.13);border-radius:12px;background:rgba(13,13,15,.82);backdrop-filter:blur(12px)}
+    .hero-cover-meta span{display:block}
+    .hero-cover-meta .label{color:var(--muted);font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
+    .hero-cover-meta .title{margin-top:2px;font-weight:750;letter-spacing:-.02em}
+    .play-mark{width:48px;height:48px;display:grid;place-items:center;flex:0 0 auto;border-radius:50%;background:var(--accent);color:var(--accent-ink)}
+    .play-mark svg{width:20px;height:20px;margin-left:2px}
+    .art-note{position:absolute;right:-20px;top:-24px;transform:rotate(5deg);padding:7px 15px;background:var(--accent);color:var(--accent-ink);border-radius:7px;font-family:var(--script);font-size:1.25rem;font-weight:600;box-shadow:0 12px 24px rgba(0,0,0,.25)}
 
-  /* Qualify list */
-  .qualify ul{list-style:none;margin:36px 0 0;padding:0;}
-  .qualify li{
-        padding:20px 0;border-top:1px solid var(--line);
-    font-size:18px;color:var(--ink-soft);max-width:60ch;
-  }
-  .qualify li:last-child{border-bottom:1px solid var(--line);}
+    .value-section{background:var(--surface-soft)}
+    .value-grid{display:grid;grid-template-columns:1.08fr 1fr;gap:clamp(48px,8vw,104px);align-items:start}
+    .value-cards{display:grid;gap:14px}
+    .value-card{padding:25px;border:1px solid var(--line);border-radius:var(--radius);background:var(--surface)}
+    .value-card-index{display:inline-grid;place-items:center;width:30px;height:30px;margin-bottom:34px;border:1px solid #4a4a50;border-radius:50%;color:var(--accent);font-size:.75rem;font-weight:760}
+    .value-card p{margin-bottom:0;font-size:.94rem}
 
-  /* Pricing */
-  .price-rows{margin:36px 0;max-width:520px;}
-  .price-row{
-        display:flex;justify-content:space-between;gap:16px;
-    padding:18px 0;border-top:1px solid var(--line);
-    font-size:17px;
-}
-  .price-row:last-child{border-bottom:1px solid var(--line);}
-  .price-row .amount{font-family:'Fraunces',Georgia,serif;font-weight:600;color:var(--accent);white-space:nowrap;}
-  .pwyw-tag{
-        display:inline-block;font-size:12px;font-weight:600;letter-spacing:.06em;
-    text-transform:uppercase;color:var(--ink-soft);
-    border:1px solid var(--line);border-radius:20px;padding:5px 12px;
-    margin-bottom:20px;
-}
-  .rights-note{
-        margin-top:40px;padding:20px 22px;background:var(--bg);
-    border:1px solid var(--line);border-radius:var(--radius);
-    font-size:14px;color:var(--ink-soft);max-width:640px;
-}
-  .rights-note strong{color:var(--ink);}
+    .catalog-section{border-block:1px solid var(--line)}
+    .catalog-head{display:flex;align-items:end;justify-content:space-between;gap:32px;margin-bottom:42px}
+    .catalog-head h2{max-width:11ch;margin-bottom:0}
+    .catalog-instructions{max-width:420px;margin:0;padding:18px 20px;border-left:2px solid var(--accent);color:var(--muted-strong);font-size:.92rem}
+    .playlist-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:28px 18px}
+    .playlist-card{display:block;min-width:0;padding:12px 12px 15px;border-radius:var(--radius);background:var(--surface);text-decoration:none;transition:background .2s ease,transform .2s ease,box-shadow .2s ease}
+    .playlist-card:hover{background:var(--surface-raised);transform:translateY(-4px);box-shadow:0 18px 42px rgba(0,0,0,.26)}
+    .playlist-image{position:relative;border-radius:8px;overflow:hidden;background:#252529}
+    .playlist-image img{width:100%;aspect-ratio:4/5;object-fit:cover}
+    .playlist-image::after{content:"";position:absolute;inset:0;border:1px solid rgba(255,255,255,.09);border-radius:inherit;pointer-events:none}
+    .playlist-card-body{padding:15px 3px 0}
+    .playlist-card h3{font-size:1rem;letter-spacing:-.018em;white-space:normal;overflow-wrap:anywhere;margin-bottom:5px}
+    .playlist-card p{font-size:.875rem;line-height:1.4;margin-bottom:13px;min-height:2.4em}
+    .card-link{display:inline-flex;align-items:center;gap:6px;color:var(--accent);font-size:.76rem;font-weight:740}
+    .card-link svg{width:14px;height:14px}
+    .content-badge{display:inline-flex;margin-top:9px;padding:4px 7px;border:1px solid #5a4141;border-radius:5px;color:#ffc0c0;font-size:.72rem;font-weight:760;letter-spacing:.06em;text-transform:uppercase}
 
-  /* Contact */
-  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:44px;margin-top:8px;}
-  @media (max-width:640px){.contact-grid{grid-template-columns:1fr;}}
-  form{margin-top:36px;}
-      label{
-        display:block;font-size:13px;font-weight:600;letter-spacing:.03em;
-    color:var(--ink-soft);margin-bottom:6px;text-transform:uppercase;
-  }
-  .field{margin-bottom:22px;}
-      input[type=text],input[type=email],textarea{
-        width:100%;font-family:'Inter',sans-serif;font-size:16px;color:var(--ink);
-    background:var(--bg);border:1px solid var(--line);border-radius:var(--radius);
-    padding:12px 14px;transition:border-color .15s;
-}
-  input:focus,textarea:focus{outline:none;border-color:var(--accent);}
-  textarea{min-height:120px;resize:vertical;}
-  .honey{position:absolute;left:-9999px;}
-  button[type=submit]{
-    background:var(--ink);color:var(--bg);border:none;
-    font-family:'Inter',sans-serif;font-weight:600;font-size:15px;
-    padding:14px 28px;border-radius:var(--radius);cursor:pointer;
-    transition:opacity .15s;
-}
-  button[type=submit]:hover{opacity:.85;}
-  button[type=submit]:disabled{opacity:.6;cursor:default;}
-  #formStatus{margin-top:16px;font-size:15px;min-height:1.4em;}
-  #formStatus.success{color:#3F6C4C;}
-  #formStatus.error{color:var(--accent);}
+    .process-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;margin-top:52px;border:1px solid var(--line);border-radius:var(--radius-lg);overflow:hidden;background:var(--line)}
+    .process-step{min-height:280px;padding:34px;background:var(--surface-soft)}
+    .process-number{font-variant-numeric:tabular-nums;color:var(--accent);font-size:.78rem;font-weight:760;letter-spacing:.12em}
+    .process-step h3{font-size:clamp(1.45rem,2.3vw,2.05rem);margin-top:70px}
+    .process-step p{font-size:.94rem;margin-bottom:0}
 
-  footer{border-top:1px solid var(--line);padding:40px 0;}
-  footer .wrap{
-    display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;align-items:center;
-    font-size:14px;color:var(--ink-soft);
-  }
-  footer a{color:var(--ink-soft);}
-</style>
+    .price-section{background:var(--surface-soft);border-block:1px solid var(--line)}
+    .price-grid{display:grid;grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr);gap:clamp(40px,7vw,92px);align-items:center}
+    .price-card{padding:clamp(30px,5vw,58px);border:1px solid #424247;border-radius:var(--radius-lg);background:var(--surface);box-shadow:0 30px 72px rgba(0,0,0,.26)}
+    .price-label{color:var(--accent);font-size:.76rem;font-weight:760;letter-spacing:.12em;text-transform:uppercase}
+    .price{font-size:clamp(3.7rem,7.2vw,6.8rem);font-weight:790;letter-spacing:-.07em;line-height:.95;margin:14px 0 18px}
+    .price small{display:block;margin-top:12px;color:var(--muted);font-size:.88rem;font-weight:620;letter-spacing:0}
+    .price-card>p{max-width:40ch;color:var(--muted-strong)}
+    .price-list{display:grid;gap:0;margin:28px 0 0;padding:0;list-style:none;border-top:1px solid var(--line)}
+    .price-list li{display:grid;grid-template-columns:12px 1fr;gap:12px;padding:14px 0;border-bottom:1px solid var(--line);color:var(--muted-strong);font-size:.91rem}
+    .price-list li::before{content:"";width:7px;height:7px;margin-top:.5em;border-radius:50%;background:var(--accent)}
+    .guarantee{margin-top:22px;padding:18px 20px;border-radius:10px;background:var(--accent);color:var(--accent-ink);font-weight:760;line-height:1.35}
+    .price-copy h2{max-width:10ch}
+    .price-copy .refresh{margin:28px 0;padding:22px 0;border-block:1px solid var(--line);color:var(--muted-strong)}
+    .price-copy .refresh strong{display:block;color:var(--text);font-size:1.12rem;margin-bottom:6px}
+    .fine-print{font-size:.8rem;color:#88888f}
+    .fine-print a{text-underline-offset:3px}
 
-  </head>
-  <body>
+    .contact-grid{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(48px,9vw,120px);align-items:start}
+    .contact-copy h2{max-width:9ch}
+    .contact-copy .direct{margin-top:30px;color:var(--muted);font-size:.9rem}
+    .contact-copy .direct a{color:var(--text);text-underline-offset:4px}
+    form{padding:clamp(24px,4vw,42px);border:1px solid var(--line);border-radius:var(--radius-lg);background:var(--surface)}
+    .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px 16px}
+    .field-full{grid-column:1/-1}
+    label{display:block;margin-bottom:7px;color:var(--muted-strong);font-size:.72rem;font-weight:740;letter-spacing:.08em;text-transform:uppercase}
+    input,textarea{width:100%;border:1px solid #3d3d42;border-radius:9px;background:#101012;color:var(--text);padding:13px 14px;transition:border-color .18s ease,box-shadow .18s ease}
+    input{min-height:48px}
+    textarea{min-height:148px;resize:vertical}
+    input::placeholder,textarea::placeholder{color:#68686f}
+    input:focus,textarea:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px rgba(183,243,74,.13)}
+    .honey{position:absolute;left:-9999px}
+    button[type=submit]{margin-top:22px;border:0;cursor:pointer}
+    button[type=submit]:disabled{opacity:.58;cursor:wait;transform:none}
+    #formStatus{min-height:1.5em;margin:18px 0 0;font-weight:650}
+    #formStatus.success{color:var(--success)}
+    #formStatus.error{color:var(--danger)}
+    #formStatus a{color:inherit;text-underline-offset:3px}
 
-  <header>
-    <div class="wrap">
-      <a class="wordmark" href="#top">GK Music</a>
-      <a class="nav-cta" href="#contact">Tell us about your space</a>
-  </div>
-</header>
+    footer{padding:36px 0 48px;border-top:1px solid var(--line)}
+    .footer-inner{display:flex;align-items:center;justify-content:space-between;gap:24px;color:#85858c;font-size:.79rem}
+    .footer-inner a{text-underline-offset:3px}
 
-<main>
+    @media (max-width:960px){
+      section{padding:88px 0}
+      .hero{min-height:auto;padding:72px 0 88px}
+      .hero-grid,.value-grid,.price-grid,.contact-grid{grid-template-columns:1fr}
+      .hero-copy{padding-block:0}
+      .hero-art{justify-self:start;width:min(100%,560px)}
+      .art-note{right:14px}
+      .playlist-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+      .catalog-head{align-items:start;flex-direction:column}
+      .process-step{min-height:250px;padding:28px}
+      .process-step h3{margin-top:48px}
+      .price-copy{order:-1}
+    }
 
-  <section class="hero" id="top">
-    <div class="wrap">
-      <span class="kicker">Soundtrack setup + curation, for restaurants and venues</span>
-      <h1>Make your venue sound as intentional as it looks.</h1>
-        <p class="sub">We help venues set up Soundtrack and curate the music so their space sounds as intentional as it looks.</p>
-      <a class="hero-cta" href="#contact">Tell us about your space</a>
-      <div class="waveform" aria-hidden="true">
-        <span style="height:35%"></span><span style="height:60%"></span><span style="height:42%"></span>
-          <span style="height:80%"></span><span style="height:28%"></span><span style="height:55%"></span>
-          <span style="height:70%"></span><span style="height:38%"></span><span style="height:90%"></span>
-          <span style="height:48%"></span><span style="height:62%"></span><span style="height:30%"></span>
-          <span style="height:75%"></span><span style="height:44%"></span><span style="height:58%"></span>
-          <span style="height:33%"></span><span style="height:85%"></span><span style="height:50%"></span>
-          <span style="height:40%"></span><span style="height:65%"></span><span style="height:25%"></span>
-          <span style="height:72%"></span><span style="height:46%"></span><span style="height:36%"></span>
-        </div>
-      </div>
-    </section>
+    @media (max-width:700px){
+      html{scroll-padding-top:118px}
+      .wrap{width:min(calc(100% - 32px),var(--max))}
+      .primary-nav .nav-link{display:none}
+      .header-inner{min-height:64px}
+      .mobile-nav{display:flex;align-items:center;justify-content:center;gap:24px;min-height:42px;border-top:1px solid rgba(255,255,255,.07)}
+      .mobile-nav a{color:var(--muted-strong);font-size:.76rem;font-weight:680;text-decoration:none}
+      .hero{padding-top:56px}
+      h1{font-size:clamp(3rem,15vw,4.45rem)}
+      h2{font-size:clamp(2.15rem,11vw,3.15rem)}
+      .playlist-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px 10px}
+      .playlist-card{padding:8px 8px 12px}
+      .playlist-card-body{padding-top:12px}
+      .playlist-card h3{font-size:.9rem}
+      .playlist-card p{font-size:.875rem;min-height:2.65em}
+      .process-grid{grid-template-columns:1fr}
+      .process-step{min-height:0}
+      .process-step h3{margin-top:34px}
+      .form-grid{grid-template-columns:1fr}
+      .field-full{grid-column:auto}
+      .footer-inner{align-items:flex-start;flex-direction:column}
+    }
 
-    <section class="explainer alt">
-      <div class="wrap">
-        <span class="eyebrow">New to Soundtrack?</span>
-      <h2>It's not Spotify with a business logo.</h2>
-        <p class="lede">Soundtrack is a streaming service built specifically for businesses. It's fully licensed for public play — which a personal Spotify or Apple Music account is not, even though plenty of venues run on one anyway. Underneath, there's a catalog of well over 100 million songs, scheduling by time of day, and one dashboard to control every location, if you have more than one.</p>
-      <p class="lede"><strong>What it doesn't do on its own is know your room. That's the part we handle.</strong></p>
-      </div>
-    </section>
+    @media (max-width:390px){
+      .header-cta{padding-inline:14px}
+      .hero-actions .button{width:100%}
+    }
 
-    <section class="services">
-      <div class="wrap">
-        <span class="eyebrow">What we do</span>
-        <h2>Setup. Then the part that actually matters.</h2>
-        <div class="cols">
-          <div class="col">
-            <h3>Setup</h3>
-            <p>We get the account running — zones, hardware, scheduling — wired correctly the first time, so you're not the one on hold with support.</p>
-          </div>
-          <div class="col">
-            <h3>Curation</h3>
-            <p>Then we build the playlists by hand, for your room, your hours, your crowd. Not a genre preset. Something considered.</p>
-          </div>
-        </div>
-      </div>
-    </section>
+    @media (prefers-reduced-motion:reduce){
+      html{scroll-behavior:auto}
+      *,*::before,*::after{scroll-behavior:auto!important;transition:none!important;animation:none!important}
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-    <section class="qualify alt">
-      <div class="wrap">
-        <span class="eyebrow">Sound familiar?</span>
-        <h2>Most venues end up here by accident.</h2>
-        <ul>
-          <li>The music's on shuffle, or off, or whatever the last shift left playing.</li>
-          <li>You've got Soundtrack, or you're about to, and no time to touch it.</li>
-          <li>The room looks considered. The music doesn't sound like anyone thought about it.</li>
-        </ul>
-      </div>
-    </section>
-
-    <section class="pricing">
-      <div class="wrap">
-        <span class="eyebrow">What it costs</span>
-      <h2>Pay what you want, while we build this out.</h2>
-      <p class="pwyw-tag">Pay-what-you-want</p>
-      <div class="price-rows">
-        <div class="price-row"><span>Soundtrack setup</span><span class="amount">$20–50</span></div>
-        <div class="price-row"><span>Three custom playlists, fully curated</span><span class="amount">$300–600</span></div>
-      </div>
-      <p class="lede">Tell us about your space below and we'll land on a number that's fair for both of us.</p>
-        <div class="rights-note">
-          <strong>A note on rights:</strong> GK Music sets up and curates your Soundtrack account. We don't sell or resell music licenses, and nothing here is legal advice — your Soundtrack subscription is what covers you for commercial use. We just make sure it sounds like it belongs.
-        </div>
-      </div>
-    </section>
-
-    <section class="contact alt" id="contact">
-      <div class="wrap">
-        <span class="eyebrow">Get in touch</span>
-      <h2>Tell us about your space.</h2>
-        <p class="lede">A few details and we'll get back to you.</p>
-
-        <form id="contactForm" action="https://formsubmit.co/ajax/gusreed02@gmail.com" method="POST">
-          <input type="hidden" name="_subject" value="New inquiry — GK Music site">
-          <input type="hidden" name="_template" value="table">
-          <input type="hidden" name="_captcha" value="false">
-          <input class="honey" type="text" name="_honey" tabindex="-1" autocomplete="off">
-
-          <div class="contact-grid">
-            <div>
-              <div class="field">
-                <label for="f-name">Name</label>
-                <input type="text" id="f-name" name="Name" required>
-              </div>
-              <div class="field">
-                <label for="f-email">Email</label>
-                <input type="email" id="f-email" name="Email" required>
-              </div>
-              <div class="field">
-                <label for="f-venue">Venue name</label>
-                <input type="text" id="f-venue" name="Venue" required>
-              </div>
-              <div class="field">
-                <label for="f-location">City / State</label>
-                <input type="text" id="f-location" name="Location">
-              </div>
-            </div>
-            <div>
-              <div class="field">
-                <label for="f-message">About your space</label>
-              <textarea id="f-message" name="Message" required placeholder="What's the space like? What's not working about the sound right now?"></textarea>
-              </div>
-            </div>
-          </div>
-
-          <button type="submit">Send it over</button>
-      </form>
-      <p id="formStatus" role="status"></p>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="#top" aria-label="GK Music home"><span>GK Music</span><span class="brand-dot" aria-hidden="true"></span></a>
+      <nav class="primary-nav" aria-label="Primary navigation">
+        <a class="nav-link" href="#samples">Samples</a>
+        <a class="nav-link" href="#process">Process</a>
+        <a class="nav-link" href="#pricing">Pricing</a>
+        <a class="button button-primary header-cta" href="#contact">Tell us about your room</a>
+      </nav>
     </div>
-  </section>
+    <nav class="mobile-nav" aria-label="Section navigation">
+      <a href="#samples">Samples</a><a href="#process">Process</a><a href="#pricing">Pricing</a>
+    </nav>
+  </header>
 
-</main>
+  <main id="main">
+    <section class="hero" id="top">
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <span class="eyebrow">Music direction for rooms where people stay</span>
+          <p class="script-note">curated by hand, tuned to the room</p>
+          <h1>Your room already has a look. Give it a sound.</h1>
+          <p class="sub">GK Music builds three human-curated programs around your actual hours, sets them up in Soundtrack, and tunes them after your staff has lived with them.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#samples">
+              Hear the samples
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+            <a class="button button-secondary" href="#contact">Tell us about your space</a>
+          </div>
+          <ul class="quiet-proof" aria-label="Service highlights">
+            <li>Human curation</li>
+            <li>Deep genre range</li>
+            <li>Thirty-day tune-up</li>
+          </ul>
+        </div>
 
-<footer>
-  <div class="wrap">
-    <span>GK Music</span>
-      <span><a href="mailto:gusreed02@gmail.com">gusreed02@gmail.com</a></span>
-      <span>© 2026 GK Music</span>
-    </div>
+        <div class="hero-art">
+          <span class="art-note">press play first</span>
+          <a class="hero-cover" href="https://open.spotify.com/playlist/1fXHlWrXU7Li5i9iPehNgN" target="_blank" rel="noopener noreferrer" aria-label="Open the SOULFOOD public sample on Spotify (opens in a new tab)">
+            <img src="img/catalog/soulfood.jpg" width="600" height="750" alt="SOULFOOD cover artwork with a scannable Spotify code" fetchpriority="high">
+            <span class="hero-cover-meta">
+              <span><span class="label">Featured public sample</span><span class="title">SOULFOOD</span></span>
+              <span class="play-mark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8.5 5.8v12.4L18 12 8.5 5.8Z" fill="currentColor"/></svg></span>
+            </span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="value-section" aria-labelledby="value-title">
+      <div class="wrap value-grid">
+        <div>
+          <span class="eyebrow">What changes</span>
+          <h2 id="value-title">The music stops being an afterthought.</h2>
+          <p class="section-intro">You chose the lighting, the chairs, the glassware. The sound should feel just as deliberate—not like whatever the last shift left playing.</p>
+        </div>
+        <div class="value-cards">
+          <article class="value-card"><span class="value-card-index">01</span><h3>Built around your room</h3><p>Three distinct programs shaped for different moments, moods and crowds in the space.</p></article>
+          <article class="value-card"><span class="value-card-index">02</span><h3>Run through Soundtrack</h3><p>We set the programs up in your own commercial playback account and hand the controls to your staff.</p></article>
+          <article class="value-card"><span class="value-card-index">03</span><h3>Tuned after real use</h3><p>After thirty days, we adjust what missed and strengthen what your room responded to.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="catalog-section" id="samples" aria-labelledby="samples-title">
+      <div class="wrap">
+        <div class="catalog-head">
+          <div><span class="eyebrow">The sample catalog</span><h2 id="samples-title">Hear the taste before you buy it.</h2></div>
+          <p class="catalog-instructions"><strong>On desktop:</strong> scan a code with Spotify. <strong>On your phone:</strong> tap any cover to open its short public sample.</p>
+        </div>
+
+        <div class="playlist-grid">
+          <a class="playlist-card" href="https://open.spotify.com/playlist/12KOlDZYLoMR4TGWYFcQRs" target="_blank" rel="noopener noreferrer" aria-label="Open ROCK THAT'S CLASSIC sample on Spotify (opens in a new tab)">
+            <div class="playlist-image"><img src="img/catalog/rock-thats-classic.jpg" width="600" height="750" loading="lazy" decoding="async" alt="ROCK THAT'S CLASSIC cover artwork and Spotify code"></div>
+            <div class="playlist-card-body"><h3>ROCK THAT'S CLASSIC</h3><p>Big guitars and deep-cut staples.</p><span class="card-link">Open sample <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+          </a>
+          <a class="playlist-card" href="https://open.spotify.com/playlist/6W2O0IHafAc4ucF1DBsTPU" target="_blank" rel="noopener noreferrer" aria-label="Open ROCK THAT GROOVES sample on Spotify (opens in a new tab)">
+            <div class="playlist-image"><img src="img/catalog/rock-that-grooves.jpg" width="600" height="750" loading="lazy" decoding="async" alt="ROCK THAT GROOVES cover artwork and Spotify code"></div>
+            <div class="playlist-card-body"><h3>ROCK THAT GROOVES</h3><p>Dive-bar swing with a pulse.</p><span class="card-link">Open sample <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+          </a>
+          <a class="playlist-card" href="https://open.spotify.com/playlist/7vx0X96gwsjcAFOP0ETw2n" target="_blank" rel="noopener noreferrer" aria-label="Open ROCK THAT ROCKS sample on Spotify (opens in a new tab)">
+            <div class="playlist-image"><img src="img/catalog/rock-that-rocks.jpg" width="600" height="750" loading="lazy" decoding="async" alt="ROCK THAT ROCKS cover artwork and Spotify code"></div>
+            <div class="playlist-card-body"><h3>ROCK THAT ROCKS</h3><p>Harder edges for louder rooms.</p><span class="card-link">Open sample <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+          </a>
+          <a class="playlist-card" href="https://open.spotify.com/playlist/0X2VYNd5XohI9iPOIASZyW" target="_blank" rel="noopener noreferrer" aria-label="Open ROCK BY THE FIRE sample on Spotify (opens in a new tab)">
+            <div class="playlist-image"><img src="img/catalog/rock-by-the-fire.jpg" width="600" height="750" loading="lazy" decoding="async" alt="ROCK BY THE FIRE cover artwork and Spotify code"></div>
+            <div class="playlist-card-body"><h3>ROCK BY THE FIRE</h3><p>Warm, lived-in, easygoing rock.</p><span class="card-link">Open sample <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+          </a>
+          <a class="playlist-card" href="https://open.spotify.com/playlist/1fXHlWrXU7Li5i9iPehNgN" target="_blank" rel="noopener noreferrer" aria-label="Open SOULFOOD sample on Spotify (opens in a new tab)">
+            <div class="playlist-image"><img src="img/catalog/soulfood.jpg" width="600" height="750" loading="lazy" decoding="async" alt="SOULFOOD cover artwork and Spotify code"></div>
+            <div class="playlist-card-body"><h3>SOULFOOD</h3><p>Soul, funk and rare-groove warmth.</p><span class="card-link">Open sample <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+          </a>
+          <a class="playlist-card" href="https://open.spotify.com/playlist/5GfKrF4wQtrvKMxpy8jO55" target="_blank" rel="noopener noreferrer" aria-label="Open ROMANTIC sample on Spotify (opens in a new tab)">
+            <div class="playlist-image"><img src="img/catalog/romantic.jpg" width="600" height="750" loading="lazy" decoding="async" alt="ROMANTIC cover artwork and Spotify code"></div>
+            <div class="playlist-card-body"><h3>ROMANTIC</h3><p>Classic soul and R&amp;B after dark.</p><span class="card-link">Open sample <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+          </a>
+          <a class="playlist-card" href="https://open.spotify.com/playlist/0PLi551qSBrWsgJzPsgFTO" target="_blank" rel="noopener noreferrer" aria-label="Open BADU sample on Spotify (opens in a new tab)">
+            <div class="playlist-image"><img src="img/catalog/badu.jpg" width="600" height="750" loading="lazy" decoding="async" alt="BADU cover artwork and Spotify code"></div>
+            <div class="playlist-card-body"><h3>BADU</h3><p>Neo-soul with soft edges.</p><span class="card-link">Open sample <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+          </a>
+          <a class="playlist-card" href="https://open.spotify.com/playlist/1tjvMvW6NxGOYM0L2BTbuZ" target="_blank" rel="noopener noreferrer" aria-label="Open CLASSY sample on Spotify (opens in a new tab)">
+            <div class="playlist-image"><img src="img/catalog/classy.jpg" width="600" height="750" loading="lazy" decoding="async" alt="CLASSY cover artwork and Spotify code"></div>
+            <div class="playlist-card-body"><h3>CLASSY</h3><p>Jazz standards and quiet confidence.</p><span class="card-link">Open sample <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+          </a>
+          <a class="playlist-card" href="https://open.spotify.com/playlist/7uDby7Hc0QYx3r4KOrlkSy" target="_blank" rel="noopener noreferrer" aria-label="Open DISCO sample on Spotify (opens in a new tab)">
+            <div class="playlist-image"><img src="img/catalog/disco.jpg" width="600" height="750" loading="lazy" decoding="async" alt="DISCO cover artwork and Spotify code"></div>
+            <div class="playlist-card-body"><h3>DISCO</h3><p>Dancefloor energy without the clichés.</p><span class="card-link">Open sample <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+          </a>
+          <a class="playlist-card" href="https://open.spotify.com/playlist/7rM3Ca1cjxeaVGWTVJDjHL" target="_blank" rel="noopener noreferrer" aria-label="Open REGGAE sample on Spotify (opens in a new tab)">
+            <div class="playlist-image"><img src="img/catalog/reggae.jpg" width="600" height="750" loading="lazy" decoding="async" alt="REGGAE cover artwork and Spotify code"></div>
+            <div class="playlist-card-body"><h3>REGGAE</h3><p>Easy rhythm, familiar roots, deep cuts.</p><span class="card-link">Open sample <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+          </a>
+          <a class="playlist-card" href="https://open.spotify.com/playlist/7tGOncyNBJYBy2k12fbSSx" target="_blank" rel="noopener noreferrer" aria-label="Open CUBANO sample on Spotify (opens in a new tab)">
+            <div class="playlist-image"><img src="img/catalog/cubano.jpg" width="600" height="750" loading="lazy" decoding="async" alt="CUBANO cover artwork and Spotify code"></div>
+            <div class="playlist-card-body"><h3>CUBANO</h3><p>Cuban classics built to move.</p><span class="card-link">Open sample <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+          </a>
+          <a class="playlist-card" href="https://open.spotify.com/playlist/6HZM5ljh4MCEaXO9ZBdUVi" target="_blank" rel="noopener noreferrer" aria-label="Open BRASILEIRO sample on Spotify (opens in a new tab)">
+            <div class="playlist-image"><img src="img/catalog/brasileiro.jpg" width="600" height="750" loading="lazy" decoding="async" alt="BRASILEIRO cover artwork and Spotify code"></div>
+            <div class="playlist-card-body"><h3>BRASILEIRO</h3><p>Brazilian warmth and sunlit rhythm.</p><span class="card-link">Open sample <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+          </a>
+          <a class="playlist-card" href="https://open.spotify.com/playlist/3tX6QtLTx54PBNgUladbxN" target="_blank" rel="noopener noreferrer" aria-label="Open FLAMENCO sample on Spotify (opens in a new tab)">
+            <div class="playlist-image"><img src="img/catalog/flamenco.jpg" width="600" height="750" loading="lazy" decoding="async" alt="FLAMENCO cover artwork and Spotify code"></div>
+            <div class="playlist-card-body"><h3>FLAMENCO</h3><p>Acoustic intensity and close-room drama.</p><span class="card-link">Open sample <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+          </a>
+          <a class="playlist-card" href="https://open.spotify.com/playlist/39UxQKaby3AWUDKcxIsqXZ" target="_blank" rel="noopener noreferrer" aria-label="Open JAZZRAP explicit sample on Spotify (opens in a new tab)">
+            <div class="playlist-image"><img src="img/catalog/jazzrap.jpg" width="600" height="750" loading="lazy" decoding="async" alt="JAZZRAP cover artwork and Spotify code"></div>
+            <div class="playlist-card-body"><h3>JAZZRAP</h3><p>Jazz-led hip hop for rooms that want edge.</p><span class="card-link">Open sample <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="content-badge">Explicit sample</span></div>
+          </a>
+          <a class="playlist-card" href="https://open.spotify.com/playlist/5bKBWkOkGWz5actb9D5B07" target="_blank" rel="noopener noreferrer" aria-label="Open OG explicit sample on Spotify (opens in a new tab)">
+            <div class="playlist-image"><img src="img/catalog/og.jpg" width="600" height="750" loading="lazy" decoding="async" alt="OG cover artwork and Spotify code"></div>
+            <div class="playlist-card-body"><h3>OG</h3><p>Golden-era hip hop with real personality.</p><span class="card-link">Open sample <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="content-badge">Explicit sample</span></div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="process" aria-labelledby="process-title">
+      <div class="wrap">
+        <span class="eyebrow">How it works</span>
+        <h2 id="process-title">Three steps. Then the room has a sound.</h2>
+        <div class="process-grid">
+          <article class="process-step"><span class="process-number">01 / LISTEN</span><h3>We read the room.</h3><p>Your crowd, the pace of the day, what belongs there—and what absolutely does not.</p></article>
+          <article class="process-step"><span class="process-number">02 / BUILD</span><h3>We shape three programs.</h3><p>Enough range to carry the week without making every shift sound like a different business.</p></article>
+          <article class="process-step"><span class="process-number">03 / HAND OVER</span><h3>We set it up and tune it.</h3><p>Your staff gets a simple system. Thirty days later, we make the first real-world adjustments.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="price-section" id="pricing" aria-labelledby="pricing-title">
+      <div class="wrap price-grid">
+        <div class="price-card">
+          <span class="price-label">Founding offer · pay what you want</span>
+          <div class="price">$300–600<small>You choose the number. The work stays the same.</small></div>
+          <p>One complete sound program for the room, built from three complementary playlists.</p>
+          <ul class="price-list">
+            <li>Three programs built around how your room is actually used</li>
+            <li>Setup in your own Soundtrack account</li>
+            <li>Staff handover and a thirty-day tune-up</li>
+          </ul>
+          <div class="guarantee">If your staff turn it off inside thirty days, you get your money back.</div>
+        </div>
+        <div class="price-copy">
+          <span class="eyebrow">What it costs</span>
+          <h2 id="pricing-title">Small-business pricing. Full-strength taste.</h2>
+          <p class="section-intro">Every track is chosen by a person. Paying toward the top of the range helps keep GK Music a small, human business.</p>
+          <p class="refresh"><strong>$20–50 monthly refresh, optional</strong>Seasonal updates and swap requests. Also pay what you want. Cancel whenever.</p>
+          <p class="fine-print"><a href="https://www.soundtrack.io/pricing/" target="_blank" rel="noopener noreferrer">Soundtrack</a> is separate and paid directly to them, from $37 per zone per month. Their commercial subscription covers licensed public playback; GK Music provides setup and curation, not legal advice or music licences.</p>
+          <a class="button button-primary" href="#contact">Tell us about your room</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" aria-labelledby="contact-title">
+      <div class="wrap contact-grid">
+        <div class="contact-copy">
+          <span class="eyebrow">Get in touch</span>
+          <p class="script-note">tell us what the room feels like</p>
+          <h2 id="contact-title">Let’s give it a sound.</h2>
+          <p class="section-intro">A few details is enough. We’ll get back to you with the next step—not a hard sell.</p>
+          <p class="direct">Prefer email? <a href="mailto:gusreed02@gmail.com">gusreed02@gmail.com</a></p>
+        </div>
+
+        <div>
+          <form id="contactForm" action="https://formsubmit.co/ajax/gusreed02@gmail.com" method="POST">
+            <input type="hidden" name="_subject" value="New inquiry — GK Music site">
+            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_captcha" value="false">
+            <input class="honey" type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true">
+            <div class="form-grid">
+              <div><label for="f-name">Name</label><input type="text" id="f-name" name="Name" autocomplete="name" required></div>
+              <div><label for="f-email">Email</label><input type="email" id="f-email" name="Email" autocomplete="email" required></div>
+              <div><label for="f-venue">Venue name</label><input type="text" id="f-venue" name="Venue" autocomplete="organization" required></div>
+              <div><label for="f-location">City / State</label><input type="text" id="f-location" name="Location" autocomplete="address-level2"></div>
+              <div class="field-full"><label for="f-message">About your space</label><textarea id="f-message" name="Message" required placeholder="What is the room like? What is not working about the sound right now?"></textarea></div>
+            </div>
+            <button class="button button-primary" type="submit">Send it over</button>
+          </form>
+          <p id="formStatus" role="status" aria-live="polite" tabindex="-1"></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-inner"><span>GK Music · music direction for rooms where people stay</span><a href="mailto:gusreed02@gmail.com">gusreed02@gmail.com</a><span>© 2026 GK Music</span></div>
   </footer>
 
   <script>
     const form = document.getElementById('contactForm');
-  const status = document.getElementById('formStatus');
-  form.addEventListener('submit', async function (e) {
-        e.preventDefault();
-    const btn = form.querySelector('button[type=submit]');
-    const originalLabel = btn.textContent;
-    btn.disabled = true;
-    btn.textContent = 'Sending…';
-    status.textContent = '';
-    status.className = '';
-    try {
-      const res = await fetch(form.action, {
-        method: 'POST',
-                headers: { 'Accept': 'application/json' },
-                body: new FormData(form)
-                  });
-      if (!res.ok) throw new Error('Request failed: ' + res.status);
-      form.reset();
-      form.hidden = true;
-      status.textContent = "Got it — thank you. We'll be in touch soon.";
-      status.className = 'success';
-    } catch (err) {
-      status.textContent = "That didn't go through — email us directly at gusreed02@gmail.com instead.";
-      status.className = 'error';
-      btn.disabled = false;
-      btn.textContent = originalLabel;
-    }
-});
-</script>
+    const status = document.getElementById('formStatus');
 
-  </body>
-  </html>
-  
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      const button = form.querySelector('button[type="submit"]');
+      const originalLabel = button.textContent;
+      button.disabled = true;
+      button.textContent = 'Sending…';
+      status.textContent = '';
+      status.className = '';
+
+      const controller = new AbortController();
+      const timeoutId = window.setTimeout(() => controller.abort(), 12000);
+
+      try {
+        const response = await fetch(form.action, {
+          method:'POST',
+          headers:{Accept:'application/json'},
+          body:new FormData(form),
+          signal:controller.signal
+        });
+        if(!response.ok) throw new Error(`Request failed: ${response.status}`);
+        form.reset();
+        form.hidden = true;
+        status.textContent = 'Got it — thank you. We’ll be in touch soon.';
+        status.className = 'success';
+        status.focus();
+      } catch (error) {
+        status.innerHTML = 'That did not go through. <a href="mailto:gusreed02@gmail.com">Email us directly instead.</a>';
+        status.className = 'error';
+        button.disabled = false;
+        button.textContent = originalLabel;
+        status.focus();
+      } finally {
+        window.clearTimeout(timeoutId);
+      }
+    });
+  </script>
+</body>
+</html>
